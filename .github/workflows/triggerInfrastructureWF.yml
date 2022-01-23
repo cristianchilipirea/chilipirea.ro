@@ -11,6 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Wait
+        run: sleep 30
       - name: Trigger remote repo
         run: gh workflow run -R cristianchilipirea/infrastructure CI
         env:
