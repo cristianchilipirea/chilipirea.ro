@@ -13,4 +13,6 @@ jobs:
     steps:
       - name: Trigger remote repo
         run: gh workflow run -R cristianchilipirea/infrastructure CI
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         
