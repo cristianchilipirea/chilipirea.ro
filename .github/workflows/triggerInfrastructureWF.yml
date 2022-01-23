@@ -14,5 +14,5 @@ jobs:
       - name: Trigger remote repo
         run: gh workflow run -R cristianchilipirea/ibis CI
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GITHUBPAT}}
         
