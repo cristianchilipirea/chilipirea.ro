@@ -27,4 +27,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/chilipirea.ro:${GITHUB_SHA}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/chilipirea.ro:"${GITHUB_SHA}"
