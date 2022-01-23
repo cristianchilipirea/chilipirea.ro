@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger remote repo
-        run: gh workflow run -R cristianchilipirea/ibis CI
+        run: gh workflow run -R cristianchilipirea/infrastructure CI
         env:
           GITHUB_TOKEN: ${{secrets.GITHUBPAT}}
         
