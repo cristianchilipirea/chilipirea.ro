@@ -1,0 +1,16 @@
+name: Infrastructure Update
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger remote repo
+        run: gh workflow run -R cristianchilipirea/infrastructure CI
+        
