@@ -14,7 +14,7 @@ jobs:
       - name: Wait
         run: sleep 60
       - name: Trigger remote repo
-        run: gh workflow run -R cristianchilipirea/infrastructure CI
+        run: gh workflow run -R cristianchilipirea/infrastructure CD
         env:
           GITHUB_TOKEN: ${{secrets.GITHUBPAT}}
         
