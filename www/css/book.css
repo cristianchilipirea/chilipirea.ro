@@ -1,0 +1,71 @@
+:root {
+	--height: 450px;
+	--width: 300px;
+	--thickness: 50px;
+}
+
+.book-container {
+	width: var(--width);
+	height: var(--height);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	perspective: 800px;
+}
+
+.book {
+	position: relative;
+	width: var(--width);
+	height: var(--height);
+	transform: rotateY(-80deg);
+	transform-style: preserve-3d;
+	transition: transform 0.5s ease;
+	animation: 1s ease 0s 1 initAnimation;
+}
+
+.book:hover {
+	transform: rotate(0deg) !important;
+}
+
+@keyframes initAnimation {
+	0% {
+		transform: rotateY(0deg);
+	}
+	100% {
+		transform: rotateY(-25deg);
+	}
+}
+
+.book > :first-child {
+	position: absolute;
+	background: #0d47a1aa;
+	width: var(--width);
+	height: var(--height);
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	box-shadow: 5px 5px 20px #666;
+}
+
+.book::before {
+	content: " ";
+	background: #fff;
+	height: calc(var(--height) - 2 * 3px);
+	width: var(--thickness);
+	top: 3px;
+	position: absolute;
+	transform: translateX(calc(var(--width) - var(--thickness) / 2 - 3px))
+		rotateY(90deg) translateX(calc(var(--thickness) / 2));
+}
+
+.book::after {
+	content: " ";
+	position: absolute;
+	left: 0;
+	width: var(--width);
+	height: var(--height);
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	background: #01060f;
+	transform: translateZ(calc(0px - var(--thickness)));
+	box-shadow: -10px 0 var(--thickness) 10px #666;
+}
